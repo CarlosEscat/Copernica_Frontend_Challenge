@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Copernica frontend coding challenge</title>
+        <script src="https://scriptkit.copernica.nl/jquery/jquery-2.2.1.min.js"></script>
+        <link rel="shortcut icon" href="https://www.copernica.com/favicon.ico" type="image/x-icon" />
+        
+        <style>
+            body 
+            {
+                background-color:   #f0f0f0;
+            }
+            
+            body > article
+            {
+                background-color:   #fff;
+                width:              800px;
+                padding:            50px;
+                margin:             0 auto;
+            }
+            
+            body >article > h1
+            {
+                margin-top:0;
+            }
+            
+                
+        </style>
+    </head>
+    <body>
+        
+        <article>
+            <h1>Copernica front-end interview challenge</h1>
+            <p>
+                Great to have you in the process of becoming part of the Copernica team. This is a simple front-end coding challenge created to serve two purposes:
+            </p>
+
+            <ul>
+                <li>
+                    Show off your skills,
+                </li>
+                <li>
+                    Give us a better understanding of your skills.
+                </li>
+            </ul>
+
+            <h2>Your mission</h2>
+            <p>
+                You will be building a simple jQuery plugin: an avatar picker. The user clicks on the avatar to open a popover which allows the user to choose another avatar from the list. After a click a (fake) HTTP request is made (while a loading spinner runs), the popover closes and the new avatar will appear in the initial view. 
+            </p>
+            <p>
+                The usage of your plugin could look something like this: $(‘div.workspace’).avatarPicker(options);
+            </p>
+            <p>
+                Example on how the end result would look like:
+            </p>
+            <img src="images/example.gif"/>
+            
+            <h2>Design and behaviour</h2>
+            <ul>
+                <li>The initially shown avatar is the first in the given list of avatars</li>
+                <li>The initial avatar which opens the popover has a border of 1px on hover and active state</li>
+                <li>The avatar icons are shown in groups of 4, aligned left.</li>
+                <li>The popover opens with a scaling animation (you are free to choose the animation that looks good in your opinion)</li>
+                <li>The currently chosen avatar has a blue border of 3px</li>
+                <li>The avatar list icons have grey border and are overlaid by a blue colored area with an opacity of 20% on hover</li>
+                <li>The loading spinner should look like shown above. It is also blue.</li>
+                <li>The popover fades out with a scaling animation</li>
+                <li>A click outside the popover area will result in the popover closing</li>
+                <li>Simulate a server request/response by showing the spinner for exactly one second before choosing the avatar</li>
+                <li>The popover is closed when an avatar is chosen</li>
+            </ul>
+            
+            <h2>Colors and measurements</h2>
+            <p>
+                At Copernica developers are assigned projects having descriptions that are descriptive as possible so that tasks are clear. Most of the time we do not add to the pixel how something needs to be created. Because this challenge is not about your design skills, below you see an example on how to style your work.
+            </p>
+            <ul>
+                <li>
+                    Avatar image
+                    <ul>
+                        <li>height: 60px, width: 60px, perfect circles</li>
+                        <li>border for initial image: hover, focus 1px, color: #9ba0a3</li>
+                    </ul>
+                </li>
+                <li>
+                    Avatar list images
+                    <ul>
+                        <li>border on hover: 3px border, color #9ba0a3</li>
+                        <li>overlay on hover: color #7aa1b2, opacity: 20%</li>
+                        <li>border spinner, currently active avatar: color: #7aa1b2</li>
+                        <li>margin between two avatars: 14px</li>
+                    </ul>
+                </li>
+                <li>
+                    Popover
+                    <ul>
+                        <li>width: 280px</li>
+                        <li>height: variable</li>
+                        <li>rounded corners of 2px radius</li>
+                        <li>background: #2c3033</li>
+                        <li>drop shadow: color: #666666, size 2px, blur 10px</li>
+                        <li>padding: 14px</li>
+                        <li>triangle: equilateral, 8px each side</li>
+                        <li>
+                            "Choose your avatar" title
+                            <ul>
+                                <li>color: #f9f9f9</li>
+                                <li>margin top and bottom: 14px</li>
+                                <li>size: 16px</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <h2>Instructions</h2>
+            
+            <ul>
+                <li>
+                    <p>
+                        This is going to be a jQuery plugin which is being passed just one property: the list of available avatars. This list contains the src of the image file and a unique id. The number of avatars can vary. For this task use the following array:
+                    </p>
+                    <code>[<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{ "src": "img6.png", "id": 1 },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{ "src": "img5.png", "id": 2 },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{ "src": "img4.png", "id": 3 },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{ "src": "img3.png", "id": 4 },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{ "src": "img2.png", "id": 5 },<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{ "src": "img1.png", "id": 6 }<br/>
+]</code>
+                    <p>
+                        (you may adjust the paths to your needs of course)
+                    </p>
+                </li>
+                <li>Requested browser compatibility: IE11 and up, current versions of Chrome, FF, Safari</li>
+                <li>You may split up the main component in as many sub-components as you see fit</li>
+                <li>Use proper semantics when writing HTML (for example: the avatar list has to be a &lt;ul&gt; and all the children just &lt;li&gt; elements)</li>
+            </ul>
+            
+            <h2>Bonus points</h2>
+            <ul>
+                <li>Chosen avatar persists a page refresh.</li>
+                <li>Clean code!</li>
+                <li>Knowledge of application flow.</li>
+                <li>Knowledge of modern best practices/coding patterns.</li>
+                <li>Demonstration of good state management.</li>
+                <li>Pixel perfection.</li>
+                <li>Componential thinking.</li>
+            </ul>
+
+        
+            <h2>How to submit your work</h2>
+            <p>
+                Send your work, zipped, to the following email address: <a href="mailto:hr@copernica.com">hr@copernica.com</a>
+            </p>
+            
+        </article>
+        
+    </body>
+</html> 
+
